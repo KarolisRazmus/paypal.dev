@@ -157,3 +157,15 @@ class AddMoneyController extends Controller
 
 //1usapersonal@gmail.com 8*1
 
+
+
+//https://www.youtube.com/watch?v=8ArEzyCEKl4&list=PLfdtiltiRHWE_c8jjW5OeweL1c_8uqcnW&index=1
+
+//https://www.youtube.com/watch?v=ly2xm_NM46g
+
+//https://github.com/guzzle/guzzle
+
+//https://github.com/paypal/PayPal-PHP-SDK
+
+//https://github.com/guzzle/guzzle/issues/575
+
