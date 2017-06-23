@@ -16,9 +16,7 @@ Route::get('/', function () {
 });
 
 
-//Route::get('paypalform', ['as' => 'paypal.form', 'uses' => 'PaypalController@index']);
-//Route::post('paypal/payment', ['as' => 'paypal.payment', 'uses' => 'PaypalController@payment']);
-//Route::get('paypal/payment', ['as' => 'paypal.status', 'uses' => 'PaypalController@getPaymentStatus']);
+
 
 Route::get('paywithpaypal', array('as' => 'addmoney.paywithpaypal','uses' => 'AddMoneyController@payWithPaypal',));
 Route::post('paypal', array('as' => 'addmoney.paypal','uses' => 'AddMoneyController@postPaymentWithpaypal',));
