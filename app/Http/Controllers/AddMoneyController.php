@@ -41,8 +41,6 @@ class AddMoneyController extends Controller
      */
     public function __construct()
     {
-//        parent::__construct();
-
         /** setup PayPal api context **/
 
         $paypal_conf = Config::get('paypal');
@@ -54,6 +52,7 @@ class AddMoneyController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
     public function payWithPaypal()
     {
         return view('front-end.paywithpaypal');
@@ -86,10 +85,13 @@ class AddMoneyController extends Controller
         $redirect_urls->setReturnUrl(URL::route('payment.status')) /** Specify return URL **/
         ->setCancelUrl(URL::route('payment.status'));
         $payment = new Payment();
-        $payment->setIntent('Sale')
+        $payment->setIntent('authorize')
             ->setPayer($payer)
             ->setRedirectUrls($redirect_urls)
             ->setTransactions(array($transaction));
+
+
+
         /** dd($payment->create($this->_api_context));exit; **/
         try {
             $payment->create($this->_api_context);
@@ -106,6 +108,7 @@ class AddMoneyController extends Controller
                 /** die('Some error occur, sorry for inconvenient'); **/
             }
         }
+
         foreach($payment->getLinks() as $link) {
             if($link->getRel() == 'approval_url') {
                 $redirect_url = $link->getHref();
